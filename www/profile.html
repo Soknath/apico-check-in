@@ -1,0 +1,86 @@
+<ons-page ng-controller="profileCtrl" style="background-color: #fff">
+    <ons-toolbar fixed-style ng-controller="SlidingMenuController" style="background-color: #3c84bc">
+        <div class="left">
+            <ons-toolbar-button ng-click="slidingMenu.toggleMenu()"><ons-icon icon="bars"></ons-icon></ons-toolbar-button>
+        </div>
+        <div class="center">
+          <div style="width: 60%;margin: auto;">
+            <img src="images/Logo.png">
+          </div>
+        </div>
+    </ons-toolbar>
+    
+    <div class="profile-card-1">
+        <div ng-if="uploader.queue.length == 0">
+            <label for="file-input">
+                <img src="{{profile_link}}" ng-if="profile_link !== ''" class="profile-image">
+
+                <img src="/Aapico-check-in/www/images/profile-placeholder.png" ng-if="profile_link == ''" class="profile-image">
+            </label>
+        </div>
+            <input type="file" id = "file-input" nv-file-select="" uploader="uploader" multiple style="display: none" /><br/>
+            <table class="table" align="center">
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td>
+                                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> แก้ไข
+                                    </button>                                
+                                </td>
+                            </tr>
+                        </tbody>
+                        </table>
+    </div>
+    <div class="login-form">
+<!--         <label class="fileContainer" style = "float: left">
+                Click to uploader!
+                <input type="file" nv-file-select="" uploader="uploader" multiple /><br/>
+                </label> -->
+                  <!--   <table class="table">
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td>
+                                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                    </button>                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+        <input type="Username" id = "username" class="text-input--underbar" ng-model="update.username" placeholder="username" value="{{username}}">
+        <span ng-show="errorUsername" style=" font-size: 12px;color: red;">{{errorUsername}}</span>
+        <input type="Username" id = "password" class="text-input--underbar" ng-model="update.password" placeholder="password" value="{{password}}">
+        <span ng-show="errorPassword" style=" font-size: 12px;color: red;">{{errorPassword}}</span>
+        <input type="Username" id = "password" class="text-input--underbar" ng-model="update.name" placeholder="ชื่อผู้ใช้">
+
+        <input type="Username" id = "password" class="text-input--underbar" ng-model="update.position" placeholder="ตำแหน่ง">
+        <br>
+        <select class="text-input--underbar" ng-options="x for x in types" style="width: 90%;" ng-model="update.company">
+            <option value="">บริษัท</option>
+        </select>
+        <br>
+
+        <input type="Username" id = "password" class="text-input--underbar" ng-model="update.tel" placeholder="หมายเลขโทรศัพท์มือถือ">
+
+
+        <input type="Username" id = "password" class="text-input--underbar" ng-model="update.email" placeholder="อีเมล">
+
+        <br>
+        <ons-col>
+            <ons-button type="submit" class="btn btn-primary" ng-click="updateAccount(true);" style="
+                background-color: #42ca72;
+                margin-right: 10px;
+            ">อัพเดท</ons-button>
+            <ons-button type="submit" class="btn btn-primary" onclick="slidingMenu.setMainPage('navMap.html', {closeMenu: true})" style="
+                background-color: #ec4646;
+                margin-right: 10px;
+            ">ยกเลิก</ons-button>
+        </ons-col>
+
+    </div>
+</ons-page>

@@ -1,0 +1,59 @@
+<ons-page style="background-color: #fff;" ng-controller="menuCtrl">
+    <ons-list>
+        <div class="profile-card">
+            <ons-button style="position: absolute; right: 10px; top: 10px;" ng-click="slidingMenu.toggleMenu()"><i class="fa fa-chevron-left"></i></ons-button>
+
+            <img src="{{profile_link}}" ng-if="profile_link !== ''" class="profile-image" onclick="slidingMenu.setMainPage('profile.html', {closeMenu: true})">
+
+            <img src="/Aapico-check-in/www/images/profile-placeholder.png" ng-if="profile_link == ''" class="profile-image" onclick="slidingMenu.setMainPage('profile.html', {closeMenu: true})">
+
+            <div class="profile-name">{{name}}</div>
+            <div class="profile-id">{{email}}</div>
+            <div class="profile-desc">{{position}} {{company}}</div>
+        </div>
+<!--         <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="slidingMenu.setMainPage('login.html', {closeMenu: true})">
+            <i class="fa fa-gear fa-lg" style="color: #666"></i>
+            &nbsp; Login
+        </ons-list-item> -->
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="slidingMenu.setMainPage('map.html', {closeMenu: true})">
+            <i class="fa fa-map-o" style="color: #25d95e; margin-right: 20px;"></i>
+            <p style="color: #a9a9a9; margin: 0;">แผนที่</p>
+        </ons-list-item>
+        
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="slidingMenu.setMainPage('poiList.html', {closeMenu: true})">
+            <i class="fa fa-map-marker fa-lg" style="color: #f576bb; margin-right: 20px;"></i>
+            <p style="color: #a9a9a9; margin: 0;">สถานที่ของฉัน</p>
+        </ons-list-item>
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="slidingMenu.setMainPage('topscore.html', {closeMenu: true})">
+            <i class="fa fa-list-ol" style="color: #f39926; margin-right: 20px;"></i>
+            <p style=" margin: 0; color: #a9a9a9;">ตารางคะแนน</p>
+        </ons-list-item>
+
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="slidingMenu.setMainPage('gift.html', {closeMenu: true})">
+            <i class="fa fa-gift" style="color: #f34d62; margin-right: 20px;"></i>
+            <p style="color: #a9a9a9; margin: 0;">ของรางวัล</p>
+        </ons-list-item>
+
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height"
+            onclick="slidingMenu.setMainPage('navAbout.html', {closeMenu: true})">
+            <i class="fa fa-info-circle" style="color: #ead52d; margin-right: 20px;"></i>
+            <p style="color: #a9a9a9; margin: 0;">เกี่ยวกับ</p>
+        </ons-list-item>
+        <ons-list-item
+            modifier="tappable" class="list__item__line-height" ng-click="clearLocalStorage()">
+            <i class="fa fa-sign-out" style="color: rgba(38, 100, 171, 0.81); margin-right: 20px;"></i>
+            <p style="color: #a9a9a9; margin: 0;">ออกจากระบบ</p>
+        </ons-list-item>
+    </ons-list>
+</ons-page>

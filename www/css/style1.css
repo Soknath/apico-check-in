@@ -1,0 +1,29 @@
+.speed-dial__item div {
+  position: absolute;
+  background: rgba(0,0,0,0.3);
+  font-size: 18px;
+  padding: 0 5px;
+  border-radius: 10px;
+  top: 0;
+  right: 45px;
+}
+.speed-dial__item {
+  overflow: visible;
+}
+ons-speed-dial:before {
+  content: '';
+  display: block;
+  position: fixed;
+  visibility:hidden;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(0,0,0,0.2);
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+ons-speed-dial.open:before {
+  opacity: 1;
+  visibility:visible;
+}

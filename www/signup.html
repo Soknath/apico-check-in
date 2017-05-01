@@ -1,0 +1,72 @@
+<ons-page ng-controller="signupCtrl" style = "background-color: #3c84bc">
+    
+    <div class="center">
+      <div style="width: 60%;width: 60%;margin-left: auto;margin-right: auto;margin-top: 50px;">
+        <img src="images/Logo.png">
+      </div>
+    </div>
+
+    <div class="login-form" style = "background-color: #68a0cb;
+    margin-top: 50px;">
+    <br>
+    <p style="
+        color: white;
+    ">ลงทะเบียน</p>
+    <!--     <div style="text-align: center; margin-top: 30px;">
+            Email: <input type="text" />
+        </div> -->
+
+<!--         <ons-col align="center">
+          <img src="images/ico_swipe_right_s.png" class="thumbnail">
+        </ons-col> -->
+<!-- 
+        <label class="fileContainer">
+                Click to uploader!
+                <input type="file" nv-file-select="" uploader="uploader" multiple  /><br/>
+                </label>
+                    <table class="table">
+                        <tbody>
+                            <tr ng-repeat="item in uploader.queue">
+                                <td>
+                                    <div ng-show="uploader.isHTML5" ng-thumb="{ file: item._file, height: 100 }"></div>
+
+                                    <button type="button" class="btn btn-danger btn-xs" ng-click="item.remove()">
+                                        <span class="glyphicon glyphicon-trash"></span> Remove
+                                    </button>                                
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+        <input type="Username" class="text-input--underbar" ng-model="user.username" placeholder="รหัสพนักงาน" value="">
+        <span ng-show="errorUsername">{{errorUsername}}</span>
+
+    <!--     <div style="text-align: center; margin-top: 30px;">
+            Password: <input type="text" />
+        </div>   -->
+        <input type="Username" class="text-input--underbar" ng-model="user.password" placeholder="รหัสผ่าน" value="">
+        <span ng-show="errorPassword">{{errorPassword}}</span>
+
+        <input type="Username" class="text-input--underbar" ng-model="user.repassword" placeholder="ใส่รหัสผ่านอีกครั้ง" value="">
+        <span ng-show="errorRePassword">{{errorRePassword}}</span>
+
+
+        <input type="Username" class="text-input--underbar" ng-model="user.name" placeholder="ชื่อผู้ใช้" value="">
+
+    <!--     <div style="text-align: center;margin-top: 30px;">
+            <ons-button ng-click="signIn()">
+                Sign In 
+            </ons-button>
+        </div> -->
+        <br><br>
+        <ons-col>
+            <ons-button modifier="small" class="width-half" ng-click="createAccount(true);" style = "width: 35%;
+                margin-right: 1px;
+                margin-left: 10px; background-color: #42ca72"><span class="glyphicon glyphicon-ok-circle"></span>&nbsp; ยืนยัน</ons-button>
+            <ons-button modifier="small" class="width-half" onclick="slidingMenu.setMainPage('index.html')" style = "width: 35%;
+                margin-right: 1px;
+                margin-left: 10px; background-color: #ec4646;"><span class="glyphicon glyphicon-remove-circle"></span>&nbsp; ยกเลิก</ons-button>
+        </ons-col>
+        <br>
+    </div>
+</ons-page>

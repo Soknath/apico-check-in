@@ -1,0 +1,47 @@
+<ons-page ng-controller="loginCtrl" style = "background: url('images/BG Boot2.png');background-position:center; background-repeat:no-repeat; background-size:cover;">
+    <!-- <ons-toolbar> -->
+        <!-- <div class="center">Login Page</div> -->
+    <!-- </ons-toolbar> -->
+    <br><br>
+    <div  style = "width: 70%; 
+        margin-top: 50px;
+        margin-left: auto;
+        margin-right: auto;">
+    <img src="images/Logo3.png">
+    </div>
+    <div class="login-form" style="background-color: #6595c1">
+    <!--     <div style="text-align: center; margin-top: 30px;">
+            Email: <input type="text" />
+        </div> -->
+
+        <ons-button modifier="quiet" class="forgot-password" style="color: white; font-size: 14px;">เข้าสู่ระบบ</ons-button>
+
+        <input type="Username" class="text-input--underbar" ng-model="user.username" placeholder="รหัสพนักงาน" value="" style="
+                color: white;
+            ">
+        <span ng-show="errorUsername" style=" font-size: 12px;color: red;">{{errorUsername}}</span>
+
+    <!--     <div style="text-align: center; margin-top: 30px;">
+            Password: <input type="text" />
+        </div>   -->
+        <input type="Username" class="text-input--underbar" ng-model="user.password" placeholder="รหัสผ่าน" value="" style="
+                color: white;
+            ">
+        <span ng-show="errorPassword" style=" font-size: 12px;color: red;">{{errorPassword}}</span>
+
+
+    <!--     <div style="text-align: center;margin-top: 30px;">
+            <ons-button ng-click="signIn()">
+                Sign In 
+            </ons-button>
+        </div> -->
+        <br><br>
+        <ons-button modifier="large" class="remember-button" ng-click="signIn(true)" style="background-color: #ff6836; width: 80%;">ตกลง</ons-button>
+        <!-- <ons-button modifier="large" class="remember-button" ng-click="signUp(true)" style="background-color: #ff6836">Sign Up</ons-button> -->
+        <br>
+        
+        <ons-button modifier="quiet" class="forgot-password" ng-click="signUp(true)" style="color: white; font-size: 12px;">ลงทะเบียน /</ons-button>
+        <ons-button modifier="quiet" class="forgot-password" ng-click="forgetPass(true)" style="color: white; font-size: 12px;">ลืมรหัสผ่าน</ons-button>
+
+    </div>
+</ons-page>
